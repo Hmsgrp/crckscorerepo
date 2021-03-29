@@ -173,6 +173,11 @@ getSummaryInfo(): Observable<summaryInfo[]> {
   return this.http.get<summaryInfo[]>(environment.apiUrl + endPoints)
 }
 
+getSummary(): Observable<any[]> {
+  let endPoints = "User/GetSumary"
+  return this.http.get<any[]>(environment.apiUrl + endPoints)
+}
+
 //
 
 //Score Section -start

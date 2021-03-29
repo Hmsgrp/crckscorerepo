@@ -23,6 +23,7 @@ export class PlayerComponent implements OnInit {
   errorSelected :boolean;
   playerid:number
   isadmin:boolean;
+  searchText;
 
   constructor(private US: UserService) { }
 
@@ -100,7 +101,7 @@ export class PlayerComponent implements OnInit {
   {
     this.US.Updateplayer(this.Register.form, this.playerid, this.selected)
     .subscribe(data => {
-       console.log(data);
+       console.log(this.selected);
        this.handleSuccess();
        this.showSuccess=true;
     },

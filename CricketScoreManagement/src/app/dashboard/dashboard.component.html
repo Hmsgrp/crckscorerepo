@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="mini-stat clearfix bg-facebook rounded">
-                <span class="mini-stat-icon"><i class="fa-puzzle-piece "></i></span>
+                <span class="mini-stat-icon"><i class="fa fa-soccer-ball-o "></i></span>
                 <div class="mini-stat-info">
                     <span>{{summaryinf[0].players}}</span>
                     Players
@@ -12,7 +12,7 @@
         </div>
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="mini-stat clearfix bg-twitter rounded">
-                <span class="mini-stat-icon"><i class="fa-puzzle-piece "></i></span>
+                <span class="mini-stat-icon"><i class="fa fa-soccer-ball-o "></i></span>
                 <div class="mini-stat-info">
                     <span>{{summaryinf[0].teams}}</span>
                     Teams
@@ -21,7 +21,7 @@
         </div>
         <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="mini-stat clearfix bg-googleplus rounded">
-                <span class="mini-stat-icon"><i class="fa-puzzle-piece "></i></span>
+                <span class="mini-stat-icon"><i class="fa fa-soccer-ball-o "></i></span>
                 <div class="mini-stat-info">
                     <span>{{summaryinf[0].matches}}</span>
                    Matches
@@ -29,4 +29,48 @@
             </div>
         </div>     
 	</div>
+</div>
+
+
+<div class="container">
+    <div class="card">
+      <div class="card-header">
+        Match Summary
+      </div>
+      <div class="card-body">
+        <div class="e-table">
+          <div>
+            <div class="row">
+                <div  class="col-md-9"></div>
+                <div class="col-md-3">
+                    <div><input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Search team" value=""></div>
+                </div>
+            </div>
+            <br>
+
+            <table class="table table-bordered">
+              <thead>
+                <tr class="tbhead">
+                  <th class="max-width">Player</th>
+                  <th class="max-width">Match</th>
+                  <th class="max-width">Team</th>
+                  <th class="max-width">Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr *ngIf="!summary.length">
+                  <td style="color: red;text-align: center;" colspan="3">No records Found</td>
+                </tr>  -->
+               <tr *ngFor="let s of summary | filter:searchText">
+                  <td class="text-nowrap align-middle">{{s.playerName}}</td>
+                  <td class="text-nowrap align-middle">{{s.teamName}}</td>
+                  <td class="text-nowrap align-middle">{{s.matchName}}</td>
+                  <td class="text-nowrap align-middle">{{s.score}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>

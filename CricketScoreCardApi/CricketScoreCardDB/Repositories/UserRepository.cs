@@ -125,5 +125,45 @@ namespace CricketScoreCardDB.Repositories
             }
 
         }
+
+        public List<Summary> GetSumary()
+        {
+            try
+            {
+                var queryResult = new List<Summary>();
+
+                using (var sqlConnection = new SqlConnection(this.dbclient.GetConnectionString()))
+                {
+
+                    using (var cmd = new SqlCommand())
+                    {
+                        sqlConnection.Open();
+
+                        cmd.CommandText = "GetSummary";
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                        cmd.Connection = sqlConnection;
+
+                        var reader = cmd.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            Summary SR = new Summary();
+
+                            SR.PlayerName = reader.GetString(0);
+                            SR.Score = reader.GetInt32(1);
+                            SR.TeamName = reader.GetString(2);
+                            SR.MatchName = reader.GetString(3);
+                            queryResult.Add(SR);
+                        }
+                    }
+                }
+                return queryResult;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }

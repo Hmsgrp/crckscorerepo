@@ -60,6 +60,15 @@ namespace CricketScoreCardApi.Controllers
             return Ok(_URepo.GetSumaryInfo());
         }
 
+        [Authorize]
+        // GET: api/<Team>
+        [HttpGet]
+        [Route("GetSumary", Name = "GetSumary")]
+        public IActionResult GetSumary()
+        {
+            return Ok(_URepo.GetSumary());
+        }
+
         [HttpPost]
         [Route("Auth/Login", Name = "Login")]
         public IActionResult Login(Users UserParameter)

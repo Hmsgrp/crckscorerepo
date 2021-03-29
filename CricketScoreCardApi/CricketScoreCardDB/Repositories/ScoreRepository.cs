@@ -24,11 +24,22 @@ namespace CricketScoreCardDB.Repositories
         {
             try
             {
-                if (Score.Score > 0)
+                var existing = (from rec in dbContext.Set<Scores>()
+                                where rec.MatchID == Score.MatchID && rec.PlayerID == Score.PlayerID
+                                select rec).SingleOrDefault();
+
+                if(existing == null)
                 {
-                    dbContext.Add(Score);
-                    dbContext.SaveChanges();
+                    if (Score.Score > 0)
+                    {
+                        dbContext.Add(Score);
+                        dbContext.SaveChanges();
+                    }
                 }
+                else
+                {
+                    throw new Exception("User is already added in this Match");
+                }        
             }
             catch (Exception ex)
             {

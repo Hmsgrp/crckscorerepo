@@ -95,7 +95,7 @@
                 </ng-select>
               </div>
 
-            <div class="form-group">
+            <div class="form-group"  style="margin-top:-40px"  >
               <label class="font-size-h6 font-weight-bolder text-dark pt-5">Balls</label>
               <input type="number" 
               autocomplete="off"
@@ -109,7 +109,7 @@
                 >
 
               <br>
-              <label class="font-size-h6 font-weight-bolder text-dark pt-5">Runs</label>
+              
               <div *ngIf="balls.invalid && (balls.dirty || balls.touched)" style="color: red;">
                 <div *ngIf="balls.errors.required">
                   Please add Balls
@@ -117,7 +117,9 @@
               </div>
             </div>
 
-            <div class="form-group">
+            
+            <div class="form-group"  style="margin-top:-40px" >
+              <label class="font-size-h6 font-weight-bolder text-dark pt-5">Runs</label>
               <input type="number" 
               autocomplete="off"
                id="Score"

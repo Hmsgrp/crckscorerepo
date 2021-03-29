@@ -11,7 +11,7 @@ namespace CricketScoreCardDB.Repositories
         public List<Users> GetUsers();
         public void DeleteUser(int id);
         public Users GetUsersLoginAuth(string Username, string Password);
-
         public List<SummaryInfo> GetSumaryInfo();
+        public List<Summary> GetSumary();
     }
 }

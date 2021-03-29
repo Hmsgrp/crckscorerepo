@@ -33,7 +33,9 @@
                   </tr>
                 </thead>
                 <tbody>
-
+                  <tr *ngIf="!Teams.length">
+                    <td style="color: red;text-align: center;" colspan="3">No records Found</td>
+                  </tr> 
                   <tr *ngFor="let team of Teams; let i = index">
                     <td>{{ i+1 }}</td>
                     <td class="text-nowrap align-middle">{{team.teamName}}</td>

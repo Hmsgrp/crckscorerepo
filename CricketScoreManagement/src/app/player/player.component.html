@@ -12,7 +12,7 @@
           </div>
         </div>
         <div class="col-md-3">
-          <div><input class="form-control w-100" type="text" placeholder="Search team" value=""></div>
+          <div><input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Search team" value=""></div>
         </div>
         <div class="col-md-3" *ngIf="isadmin">
           <div class="text-center px-xl-3">
@@ -25,7 +25,7 @@
   </div>
     <div class="container heightadj"  >
       <!-- Project-->
-      <div class="project" *ngFor="let play of Player; let i = index">
+      <div class="project" *ngFor="let play of Player | filter:searchText">
         <div class="row bg-white has-shadow">
           <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
             <div class="project-title d-flex align-items-center">
@@ -38,7 +38,6 @@
             <div class="project-date"><span class="hidden-sm-down">Team : {{play.teamName}}</span></div>
           </div>
           <div class="right-col col-lg-6 d-flex align-items-center">
-            <div class="comments">Total Matches: 20</div>
             <div class="project-progress">
               <div class="progress">
                 <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal"
@@ -89,19 +88,19 @@
                 <br><br>
               
                 <label for="selectTeam"><b>Select Team</b></label>
-                  <div *ngIf="errorSelected" style="color: red;">
-                   Please Select Team
-                  </div>
-
+                  
                   <ng-select bindLabel="name" placeholder="Select Team" name="selected" appendTo="body"
                   [searchable]="true" [clearable]="true" [(ngModel)]="selected">
                   <ng-option [value]="team.teamID"  [disabled]="false" *ngFor="let team of Teams">
                     {{team.teamName}}
                   </ng-option>
                 </ng-select>
+                <br>
+                <div *ngIf="errorSelected" style="color: red;">
+                  Please Select Team
+                 </div>
 
-
-                 <br><br>
+                 <br>
         
 <!--   
                   <label for="psw-repeat"><b>Upload Profile Picture</b></label>

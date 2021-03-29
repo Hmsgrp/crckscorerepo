@@ -19,9 +19,11 @@ export class LoginComponent implements OnInit {
   showSuccessLogin:boolean;
   showFailureLogin:boolean;
   errors:boolean;
+  errortext:string;
   ngOnInit(): void {
     this.showSuccessLogin = false;
     this.showFailureLogin=false;
+    this.errors = false;
   }
 
   submit(){
@@ -38,6 +40,7 @@ export class LoginComponent implements OnInit {
        window.location.href = gotoURL;
     },
     error => {
+     this.errortext = error;
       console.log(error);
     }  
     );

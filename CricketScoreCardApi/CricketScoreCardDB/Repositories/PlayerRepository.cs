@@ -54,6 +54,7 @@ namespace CricketScoreCardDB.Repositories
                 {
                     existing.PlayerName = player.PlayerName;
                     existing.UpdatedDate = DateTime.Now;
+                    existing.TeamID = player.TeamID;
                     dbContext.SaveChanges();
                 }
             }

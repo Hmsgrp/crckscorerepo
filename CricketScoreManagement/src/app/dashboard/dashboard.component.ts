@@ -10,11 +10,14 @@ import { summaryInfo } from '../Models/summaryInfo';
 })
 export class DashboardComponent implements OnInit {
   summaryinf : summaryInfo[] = [];
+  summary:any;
+  searchText;
 
   constructor(private US: UserService) { }
 
   ngOnInit(): void {
     this.getSummaryInfo();
+    this.getSummary()
   }
 
 
@@ -30,5 +33,22 @@ export class DashboardComponent implements OnInit {
     }  
     );
   }
+
+  getSummary()
+  {
+    this.US.getSummary()
+    .subscribe(data => { 
+      console.log(data);
+       this.summary = data;
+    },
+    error => {
+      console.log(error);
+    }  
+    );
+  }
+
+
+
+
 
 }
