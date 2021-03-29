@@ -24,20 +24,40 @@ export class PlayerComponent implements OnInit {
   playerid:number
   isadmin:boolean;
   searchText;
-
+  imagePath:string;
+  url:any;
+  imageselected:boolean;
   constructor(private US: UserService) { }
 
   ngOnInit(): void {
     this.isadmin = false;
     this.isEdit = false;
+    this.imageselected=true;
     this.getrole()
     this.getTeams();
     this.getPlayers();
+    this.imagePath="";
+    
+  }
+
+  
+  onSelectFile(event) {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (event) => { // called once readAsDataURL is completed
+        this.url = event.target.result; 
+      }
+    }
+  }
+   deleteu(){
+    this.url = null;
   }
 
   getrole()
   {
-    console.log(1);
     var f = localStorage.getItem("Role");
     if(f == "1")
     {
@@ -56,6 +76,13 @@ export class PlayerComponent implements OnInit {
 
   submit()
   {
+
+    if(this.url == null)
+    {
+      this.imageselected=false;
+      return false;
+    }
+
     if(!this.selected)
     {
       this.errorSelected = true;
@@ -86,7 +113,7 @@ export class PlayerComponent implements OnInit {
 
   AddPlayer()
   {
-    this.US.AddPlayer(this.Register.form,this.selected)
+    this.US.AddPlayer(this.Register.form,this.selected,this.url)
     .subscribe(data => {
        this.handleSuccess();
        this.showSuccess = true;
@@ -99,7 +126,7 @@ export class PlayerComponent implements OnInit {
 
   UpdatePlayer()
   {
-    this.US.Updateplayer(this.Register.form, this.playerid, this.selected)
+    this.US.Updateplayer(this.Register.form, this.playerid, this.selected, this.url)
     .subscribe(data => {
        console.log(this.selected);
        this.handleSuccess();
@@ -149,6 +176,8 @@ export class PlayerComponent implements OnInit {
 
   handleSuccess()
   {
+    this.url = null;
+    this.imageselected = true;
     this.getPlayers();
     this.closebutton.nativeElement.click();
     this.Register.form.reset();

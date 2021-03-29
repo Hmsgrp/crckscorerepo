@@ -39,9 +39,9 @@ export class LoginComponent implements OnInit {
       var gotoURL= window.location.origin + "/CricScore" ;
        window.location.href = gotoURL;
     },
-    error => {
-     this.errortext = error;
-      console.log(error);
+    HttpErrorResponse => {
+     this.errortext = HttpErrorResponse.error;
+     this.errors = true;
     }  
     );
   }

@@ -10,7 +10,7 @@
                         </div>
                         <div class="card-body">
                             <div *ngIf="errors" class="alert alert-danger alert-dismissible">
-                                <strong>Error!</strong> Changes has been Saved.
+                                <strong>Error!</strong> {{this.errortext}}
                               </div>
                             <form  #Register="ngForm" (submit)="submit()" class="form">
                                 <div class="form-group">

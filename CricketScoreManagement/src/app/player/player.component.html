@@ -29,7 +29,7 @@
         <div class="row bg-white has-shadow">
           <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
             <div class="project-title d-flex align-items-center">
-              <div class="image has-shadow"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="..." class="img-fluid"></div>
+              <div class="image has-shadow"><img src="{{play.playerImage}}" alt="https://bootdey.com/img/Content/avatar/avatar2.png" class="img-fluid"></div>
               <div class="text">
                 <small>PlayerName</small>
                 <h3 class="h4">{{play.playerName}}</h3>
@@ -69,8 +69,20 @@
                 <div class="container">
                   <p>Map this player to a Team.</p>
                   <hr>
+
+                  <label class="hoverable" for="fileInput">
+                    <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> 
+                    <div class="hover-text">Choose file</div>
+                    <div class="background"></div>
+                  </label>
+                  <div style="color: red;" *ngIf="!imageselected">
+                    Please Upload Profile Picture
+                  </div>
+                  <br/>
+                  <input id="fileInput" type='file' (change)="onSelectFile($event)">
+                  <button *ngIf="url" (click)="deleteu()" >delete</button>
        
-        
+               <br><br>
                 <label for="PlayerName"><b>PlayerName</b></label>
                 <input type="text" autocomplete="off" id="PlayerName" name="PlayerName" #PlayerName="ngModel"
                 placeholder="Enter Player Name" ngModel class="form-control" required
@@ -101,13 +113,7 @@
                  </div>
 
                  <br>
-        
-<!--   
-                  <label for="psw-repeat"><b>Upload Profile Picture</b></label>
-                  <input type="file" class="form-control" id="customFile" 
-                   name="customFile" #customFile="ngModel" ngModel required
-                  />
-       -->
+
                 <hr>
                   <button type="submit" class="btn btn-primary registerbtn" [disabled]="!Register.valid">Confirm Changes</button>
                 </div>

@@ -5,5 +5,6 @@ export class Player
     TeamID:number;
     CreatedDate:Date;
     UpdatedDate:Date;
-    Status:boolean;   
+    Status:boolean;  
+    PlayerImage:string; 
 }

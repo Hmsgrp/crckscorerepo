@@ -60,13 +60,14 @@ export class UserService {
 //Teams Section -End
 
 //player Section -start
-AddPlayer(FormGroupValues:FormGroup,teamid:number) : Observable<any>
+AddPlayer(FormGroupValues:FormGroup,teamid:number,playerimg:string) : Observable<any>
 {
   const player = new Player();
   player.PlayerName =  FormGroupValues.controls.PlayerName.value;
   player.TeamID = teamid;
   player.CreatedDate = new Date();
   player.Status = true;
+  player.PlayerImage=playerimg;
 
   const headers = { 'content-type': 'application/json'}  
   let endPoints = "Play/AddPlayerV1"
@@ -74,13 +75,14 @@ AddPlayer(FormGroupValues:FormGroup,teamid:number) : Observable<any>
   return this.http.post(environment.apiUrl + endPoints, body,{'headers':headers})
 }
 
-Updateplayer(FormGroupValues:FormGroup,playerID:number,teamid:number): Observable<any>{
+Updateplayer(FormGroupValues:FormGroup,playerID:number,teamid:number,playerimg:string): Observable<any>{
 
   const play = new Player();
   play.PlayerID = playerID;
   play.PlayerName =  FormGroupValues.controls.PlayerName.value;
   play.TeamID =teamid;
   play.UpdatedDate = new Date();
+  play.PlayerImage=playerimg;
 
   const headers = { 'content-type': 'application/json'}  
   const body = JSON.stringify(play);
