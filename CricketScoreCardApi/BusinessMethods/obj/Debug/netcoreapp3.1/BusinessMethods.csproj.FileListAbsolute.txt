@@ -1,0 +1,8 @@
+C:\Users\smahadev\source\repos\CricketScoreCardApi\BusinessMethods\bin\Debug\netcoreapp3.1\BusinessMethods.deps.json
+C:\Users\smahadev\source\repos\CricketScoreCardApi\BusinessMethods\bin\Debug\netcoreapp3.1\BusinessMethods.dll
+C:\Users\smahadev\source\repos\CricketScoreCardApi\BusinessMethods\bin\Debug\netcoreapp3.1\BusinessMethods.pdb
+C:\Users\smahadev\source\repos\CricketScoreCardApi\BusinessMethods\obj\Debug\netcoreapp3.1\BusinessMethods.AssemblyInfoInputs.cache
+C:\Users\smahadev\source\repos\CricketScoreCardApi\BusinessMethods\obj\Debug\netcoreapp3.1\BusinessMethods.AssemblyInfo.cs
+C:\Users\smahadev\source\repos\CricketScoreCardApi\BusinessMethods\obj\Debug\netcoreapp3.1\BusinessMethods.csproj.CoreCompileInputs.cache
+C:\Users\smahadev\source\repos\CricketScoreCardApi\BusinessMethods\obj\Debug\netcoreapp3.1\BusinessMethods.dll
+C:\Users\smahadev\source\repos\CricketScoreCardApi\BusinessMethods\obj\Debug\netcoreapp3.1\BusinessMethods.pdb

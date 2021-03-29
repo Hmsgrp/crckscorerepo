@@ -1,0 +1,17 @@
+.line-height
+{
+    line-height:1.2 !important;
+}
+.border-error
+{
+    border: 1px solid #d01616!important;
+}
+.margintop10px
+{
+    margin-top: 10px !important;
+}
+
+.border-highlight
+{
+  color: green !important;
+}

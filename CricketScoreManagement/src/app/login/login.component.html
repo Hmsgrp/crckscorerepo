@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 min-vh-100 d-flex flex-column justify-content-center">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <!-- form card login -->
+                    <div class="card rounded shadow shadow-sm">
+                        <div class="card-header">
+                            <h3 class="mb-0">Login</h3>
+                        </div>
+                        <div class="card-body">
+                            <form  #Register="ngForm" (submit)="submit()" class="form">
+                                <div class="form-group">
+                                    <label for="uname">Username/EmailAddress/PhoneNumber</label>
+                                    <input type="text" 
+                                    class="form-control form-control-lg rounded-0" 
+                                    autocomplete="off"
+                                    placeholder="User Name"
+                                    id="UserName"
+                                    name="UserName"
+                                    #UserName="ngModel"
+                                    ngModel 
+                                    maxlength="30"
+                                    required
+                                    >
+                                    <br>
+                                    <div *ngIf="UserName.invalid && (UserName.dirty || UserName.touched)" style="color: red;">
+                                        <div *ngIf="UserName.errors.required">
+                                            User Name is required.
+                                        </div>
+                                      </div>
+                                      
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" 
+                                    name="Password" 
+                                    class="form-control form-control-lg rounded-0" 
+                                    autocomplete="off"
+                                    placeholder="password"
+                                    id="Password"
+                                    #Password="ngModel"
+                                    ngModel 
+                                    required
+                                    >
+                                    <br>
+                                    <div *ngIf="Password.invalid && (Password.dirty || Password.touched)" style="color: red;">
+                                        <div *ngIf="Password.errors.required">
+                                            Password is required.
+                                        </div>
+                                      </div>
+                                  
+                                </div>
+                     
+                                <button type="submit"  [disabled]="Register.invalid" class="btn btn-success btn-block">Login</button>
+                                <p class="float-left" style="margin-top:10px">Dont have an account?<a href="/SignUp">Register</a>.</p><br>
+                                <p class="float-right">Forgotten Your Password? <a href="/ForgetPassword">Click here</a>.</p>
+                            </form>
+                        </div>
+           
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+                </div>
+
+
+            </div>
+            <!--/row-->
+
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->

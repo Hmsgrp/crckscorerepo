@@ -1,0 +1,9 @@
+C:\Users\smahadev\source\repos\CricketScoreCardApi\CricketScoreCardDB\bin\Debug\netcoreapp3.1\CricketScoreCardDB.deps.json
+C:\Users\smahadev\source\repos\CricketScoreCardApi\CricketScoreCardDB\bin\Debug\netcoreapp3.1\CricketScoreCardDB.dll
+C:\Users\smahadev\source\repos\CricketScoreCardApi\CricketScoreCardDB\bin\Debug\netcoreapp3.1\CricketScoreCardDB.pdb
+C:\Users\smahadev\source\repos\CricketScoreCardApi\CricketScoreCardDB\obj\Debug\netcoreapp3.1\CricketScoreCardDB.csprojAssemblyReference.cache
+C:\Users\smahadev\source\repos\CricketScoreCardApi\CricketScoreCardDB\obj\Debug\netcoreapp3.1\CricketScoreCardDB.AssemblyInfoInputs.cache
+C:\Users\smahadev\source\repos\CricketScoreCardApi\CricketScoreCardDB\obj\Debug\netcoreapp3.1\CricketScoreCardDB.AssemblyInfo.cs
+C:\Users\smahadev\source\repos\CricketScoreCardApi\CricketScoreCardDB\obj\Debug\netcoreapp3.1\CricketScoreCardDB.csproj.CoreCompileInputs.cache
+C:\Users\smahadev\source\repos\CricketScoreCardApi\CricketScoreCardDB\obj\Debug\netcoreapp3.1\CricketScoreCardDB.dll
+C:\Users\smahadev\source\repos\CricketScoreCardApi\CricketScoreCardDB\obj\Debug\netcoreapp3.1\CricketScoreCardDB.pdb

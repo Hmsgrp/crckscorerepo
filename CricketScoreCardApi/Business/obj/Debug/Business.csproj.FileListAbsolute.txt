@@ -1,0 +1,5 @@
+C:\Users\smahadev\source\repos\CricketScoreCardApi\Business\bin\Debug\Business.dll
+C:\Users\smahadev\source\repos\CricketScoreCardApi\Business\bin\Debug\Business.pdb
+C:\Users\smahadev\source\repos\CricketScoreCardApi\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+C:\Users\smahadev\source\repos\CricketScoreCardApi\Business\obj\Debug\Business.dll
+C:\Users\smahadev\source\repos\CricketScoreCardApi\Business\obj\Debug\Business.pdb

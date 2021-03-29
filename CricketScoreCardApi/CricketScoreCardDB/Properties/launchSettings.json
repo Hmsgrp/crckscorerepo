@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "BusinessMethods": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "sqldb_connection": "Server=(LocalDB)\\MSSQLLocalDB;Database=CricketScoreCardDB;Trusted_Connection=True;MultipleActiveResultSets=true",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

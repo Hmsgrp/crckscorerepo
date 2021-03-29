@@ -1,0 +1,126 @@
+<section class="projects no-padding-top">
+
+  <div class="card">
+    <div class="card-header">
+      Player
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div *ngIf="showSuccess" class="alert alert-success alert-dismissible">
+            <strong>Success!</strong> Changes has been Saved.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div><input class="form-control w-100" type="text" placeholder="Search team" value=""></div>
+        </div>
+        <div class="col-md-3" *ngIf="isadmin">
+          <div class="text-center px-xl-3">
+            <button class="btn btn-success btn-block float-right" (click)="Add()" type="button" data-toggle="modal"
+              data-target="#addTeamModel">Add New Player</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container heightadj"  >
+      <!-- Project-->
+      <div class="project" *ngFor="let play of Player; let i = index">
+        <div class="row bg-white has-shadow">
+          <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
+            <div class="project-title d-flex align-items-center">
+              <div class="image has-shadow"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="..." class="img-fluid"></div>
+              <div class="text">
+                <small>PlayerName</small>
+                <h3 class="h4">{{play.playerName}}</h3>
+              </div>
+            </div>
+            <div class="project-date"><span class="hidden-sm-down">Team : {{play.teamName}}</span></div>
+          </div>
+          <div class="right-col col-lg-6 d-flex align-items-center">
+            <div class="comments">Total Matches: 20</div>
+            <div class="project-progress">
+              <div class="progress">
+                <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal"
+                data-target="#addTeamModel" (click)="Edit(play.playerID)">Edit</button>
+              <button class="btn btn-sm btn-outline-secondary badge" (click)="delete(play.playerID)" type="button"><i
+                  class="fa fa-trash"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <div class="modal" id="addTeamModel">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form #Register="ngForm" (submit)="submit()">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">{{modelTitletext}}</h4>
+              <button #closebutton type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+
+              <div class="form-group">
+                <div class="container">
+                  <p>Map this player to a Team.</p>
+                  <hr>
+       
+        
+                <label for="PlayerName"><b>PlayerName</b></label>
+                <input type="text" autocomplete="off" id="PlayerName" name="PlayerName" #PlayerName="ngModel"
+                placeholder="Enter Player Name" ngModel class="form-control" required
+                maxlength="30">
+
+              <br>
+              <div *ngIf="PlayerName.invalid && (PlayerName.dirty || PlayerName.touched)" style="color: red;">
+                <div *ngIf="PlayerName.errors.required">
+                  Player Name is required.
+                </div>
+                <div *ngIf="PlayerName.errors.maxlength">
+                  PlayerName does not exceed 30 characters.
+                </div>
+              </div>
+                <br><br>
+              
+                <label for="selectTeam"><b>Select Team</b></label>
+                  <div *ngIf="errorSelected" style="color: red;">
+                   Please Select Team
+                  </div>
+
+                  <ng-select bindLabel="name" placeholder="Select Team" name="selected" appendTo="body"
+                  [searchable]="true" [clearable]="true" [(ngModel)]="selected">
+                  <ng-option [value]="team.teamID"  [disabled]="false" *ngFor="let team of Teams">
+                    {{team.teamName}}
+                  </ng-option>
+                </ng-select>
+
+
+                 <br><br>
+        
+<!--   
+                  <label for="psw-repeat"><b>Upload Profile Picture</b></label>
+                  <input type="file" class="form-control" id="customFile" 
+                   name="customFile" #customFile="ngModel" ngModel required
+                  />
+       -->
+                <hr>
+                  <button type="submit" class="btn btn-primary registerbtn" [disabled]="!Register.valid">Confirm Changes</button>
+                </div>
+                
+              </div>
+
+
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>

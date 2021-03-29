@@ -1,0 +1,36 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:13px;
+    line-height:0.7;
+  }
+  
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  container
+  {
+      background-color: #f5f4f4 !important;
+  }
+  
+  .border-error
+  {
+      border: 1px solid #d01616!important;
+  }
+  
+  .border-highlight
+  {
+    color: green !important;
+  }
+
+  .active, .nav-link:hover {
+    background-color: #666;
+    color: white;
+  }
+
+
+  
+  
+  

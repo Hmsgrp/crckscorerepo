@@ -1,0 +1,117 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                  Rules
+                </div>
+                <ul class="list-group list-group-flush line-height">
+                  <li class="list-group-item">Please add your Registered Mobile Number.</li>
+                  <li class="list-group-item">Get tips Suggestions on Whatsapp,telegram.</li>
+                  <li class="list-group-item">Start Earning.</li>
+                </ul>
+           </div>
+        </div>
+      
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="mb-0">Register</h3>
+                </div>
+                <div class="card-body"> 
+                <p class="float-left">Already have an account? <a href="/Login">Sign in</a>.</p>
+                <p class="float-right border-highlight">*All fields are mandatory</p>
+                    <div class="alert alert-success" role="alert" *ngIf="showSuccessMessage">
+                        Registration Successfull.
+                    </div>
+                    <div class="alert margintop10px" *ngIf="serverErrorMessage">
+                        {{serverErrorMessage}}
+                    </div>
+                <hr>
+                <form #Register="ngForm" (submit)="submit()">
+                    <div class="col-md-9">
+                        <div class="form-group"> <label >UserName <span class="text-danger">*</span></label>
+                            <input type="text"  class="form-control" 
+                                autocomplete="off"
+								placeholder="User Name"
+                                id="Name"
+                                name="Name"
+                                #Name="ngModel"
+                                ngModel 
+                                maxlength="30"
+                                required>
+                                <br>
+                                <div *ngIf="Name.invalid && (Name.dirty || Name.touched)" style="color: red;">
+                                    <div *ngIf="Name.errors.required">
+                                       Name is required.
+                                    </div>
+                                    <div *ngIf="Name.errors.maxlength">
+                                      Name does not exceed 30 characters.
+                                    </div>
+                                  </div>
+                               
+                         </div>
+  
+                        <div class="form-group">
+                            <label for="Password">Password <span class="text-danger">*</span></label>
+                            <input type="password" 
+                             class="form-control"
+                             autocomplete="off"
+                             id="Password"
+                             name="Password"
+                             #Password="ngModel"
+                             placeholder="Password"
+                             ngModel 
+                             maxlength="30"
+                             required>
+                             <br>
+                             <div *ngIf="Password.invalid && (Password.dirty || Password.touched)" style="color: red;">
+                                <div *ngIf="Password.errors.required">
+                                    Password is required.
+                                </div>
+                                <div *ngIf="Name.errors.maxlength">
+                                    Password does not exceed 30 characters.
+                                </div>
+                              </div>
+                                
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="ConfirmPassword">Confirm Password <span class="text-danger">*</span></label>
+                            <input type="password" 
+                            class="form-control"
+                             autocomplete="off"
+                             id="ConfirmPassword"
+                             name="ConfirmPassword"
+                             placeholder="Confirm Password"
+                             #ConfirmPassword="ngModel"
+                             ngModel 
+                             maxlength="30"
+                              required>
+                              <br>
+                              <div *ngIf="ConfirmPassword.invalid && (ConfirmPassword.dirty || ConfirmPassword.touched)" style="color: red;">
+                                <div *ngIf="ConfirmPassword.errors.required">
+                                    Confirm Password is required.
+                                </div>
+                                <div *ngIf="ConfirmPassword.errors.maxlength">
+                                    Confirm Password does not exceed 30 characters.
+                                </div>
+                              </div>
+                                
+                              <div *ngIf="Notmatch" class="margintop10px">
+                                <span class="help-block"  style="color:red">Password and Confirm Password doesn`t match</span>
+                            </div>
+                        </div> 
+                    </div>
+                <hr>
+                <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+                <button type="submit" class="btn btn-success">Register</button> 
+             </form>  
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
